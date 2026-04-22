@@ -1,69 +1,358 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BISMARCH.IN | Neutron Netam</title>
+    <title>BISMARCH | Futuristic Frontier</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-color: #050509; /* एकदम डार्क ब्लू-ब्लैक */
+            --main-accent: #00f2fe; /* इलेक्ट्रिक सियान (Futuristic Blue) */
+            --second-accent: #4facfe; /* गहरा सियान */
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --card-bg: rgba(20, 20, 35, 0.6); /* हल्का ट्रांसपेरेंट कार्ड */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            background-image: radial-gradient(#1a1a2e 1px, transparent 1px);
+            background-size: 50px 50px; /* हल्का सा स्टारफ़ील्ड इफ़ेक्ट */
+        }
+
+        /* --- 1. नेविगेशन बार (Navbar) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 9, 0.9);
+            backdrop-filter: blur(10px); /* ग्लास इफ़ेक्ट */
+            padding: 1rem 5%;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--main-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--main-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--main-accent);
+        }
+
+        /* --- 2. हीरो सेक्शन (Hero Section) --- */
+        header.hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            text-align: center;
+            padding: 0 10%;
+            position: relative;
+        }
+
+        header.hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        header.hero h1 span {
+            background: linear-gradient(90deg, var(--main-accent), var(--second-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header.hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-btn {
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--main-accent), var(--second-accent));
+            color: var(--bg-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+        }
+
+        /* --- 3. सामान्य सेक्शन स्टाइल --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        h2.section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--main-accent);
+            border-radius: 2px;
+        }
+
+        /* --- 4. 'About Me' सेक्शन --- */
+        #about p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
-        .container {
-            padding: 20px;
+
+        /* --- 5. 'Universe' (Projects) सेक्शन --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        h1 {
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .project-card .icon {
             font-size: 3rem;
-            color: #58a6ff;
-            margin-bottom: 10px;
+            color: var(--main-accent);
+            margin-bottom: 1rem;
         }
-        p {
-            font-size: 1.2rem;
-            color: #8b949e;
+
+        .project-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-        .tags {
-            margin-top: 20px;
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
-        .tag {
-            background: #21262d;
-            padding: 5px 15px;
-            border-radius: 20px;
+
+        .project-link {
+            text-decoration: none;
+            color: var(--main-accent);
+            font-weight: 600;
             font-size: 0.9rem;
-            margin: 5px;
-            display: inline-block;
-            border: 1px solid #30363d;
+            text-transform: uppercase;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #484f58;
+
+        /* --- 6. 'Vision' (Skills) सेक्शन --- */
+        .skill-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--main-accent);
+            border-color: rgba(0, 242, 254, 0.2);
+        }
+
+        /* --- 7. फुटर (Footer) --- */
+        footer {
+            background: #030306;
+            padding: 3rem 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--main-accent);
+        }
+
+        /* --- 8. मोबाइल के लिए रिस्पॉन्सिवनेस --- */
+        @media (max-width: 768px) {
+            header.hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; } /* मोबाइल में मेनु छिपाएं */
+            section { padding: 3rem 5%; }
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>BISMARCH.IN</h1>
-        <p>नमस्ते, मैं <strong>Neutron Netam (N²)</strong> हूँ।</p>
-        <p>मेरी नई वेबसाइट जल्द ही आ रही है।</p>
-        
-        <div class="tags">
-            <span class="tag">Content Creation</span>
-            <span class="tag">AI Tech</span>
-            <span class="tag">Space Software</span>
-            <span class="tag">Community Building</span>
-        </div>
 
-        <div class="footer">
-            © 2026 Bismarch World. All Rights Reserved.
+    <nav>
+        <div class="logo">BISMARCH</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#universe">Universe</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>BISMARCH:<br><span>The Futuristic Frontier</span></h1>
+        <p>Exploring the convergence of Content Creation, AI, and Next-Gen Space Technologies.</p>
+        <a href="#about" class="cta-btn">Enter The Dimension</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am Neutron, a content creator and tech visionary from Bhopal, MP. Passionate about leveraging the power of AI (Midjourney, ElevenLabs) to visualize the future of Space Exploration and Robotics. My goal is to build a digital ecosystem that inspires innovation. Welcome to BISMARCH.</p>
+    </section>
+
+    <section id="universe">
+        <h2 class="section-title">My Universe</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="icon">🚀</div> <h3>ZynInfo Channel</h3>
+                <p>Exploring the deepest mysteries of space, cosmology, and futuristic technologies.</p>
+                <a href="https://www.youtube.com/@ZynInfo" class="project-link" target="_blank">Watch Now →</a>
+            </div>
+            
+            <div class="project-card">
+                <div class="icon">🤖</div> <h3>BismarchWorld</h3>
+                <p>The core hub for personal branding, entrepreneurship, and robotic ventures.</p>
+                <a href="#" class="project-link">Stay Tuned →</a>
+            </div>
+            
+            <div class="project-card">
+                <div class="icon">💡</div> <h3>Indian Syndicate</h3>
+                <p>A planned network for tech-driven innovation and collaborative startups.</p>
+                <a href="#" class="project-link">Learn More →</a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="vision">
+        <h2 class="section-title) ">My Vision & Skills</h2>
+        <div class="skill-list">
+            <div class="skill-item">Content Creation (YouTube)</div>
+            <div class="skill-item">Cosmology & Space Tech</div>
+            <div class="skill-item">Robotics Systems</div>
+            <div class="skill-item">AI Video & Art Generation</div>
+            <div class="skill-item">Entrepreneurship</div>
+            <div class="skill-item">ZynInfo / BismarchWorld</div>
+            <div class="skill-item">Bhopal, MP</div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Ready to collaborate on the future?</p>
+        <a href="mailto:neutron@bismarch.in" class="cta-btn">Initiate Contact</a>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@ZynInfo" target="_blank">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p style="margin-top: 2rem; color: #555;">&copy; 2026 BISMARCH. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
