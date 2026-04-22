@@ -1,34 +1,102 @@
-<section id="universe">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISMARCH | Futuristic Frontier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Syncopate:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #050509; --main-accent: #00f2fe; --second-accent: #4facfe; --text-primary: #ffffff; --text-secondary: #b0b0b0; --card-bg: rgba(20, 20, 35, 0.85); }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Exo 2', sans-serif; background-color: var(--bg-color); color: var(--text-primary); overflow-x: hidden; background-image: radial-gradient(#1a1a2e 1px, transparent 1px); background-size: 50px 50px; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(5, 5, 9, 0.95); backdrop-filter: blur(15px); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(0, 242, 254, 0.2); }
+        .logo { font-family: 'Audiowide', cursive; font-size: 1.5rem; color: var(--main-accent); text-decoration: none; letter-spacing: 2px; }
+        .nav-links a { color: var(--text-primary); text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; }
+        header.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; }
+        header.hero h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 5px; margin-bottom: 1rem; }
+        header.hero h1 span { background: linear-gradient(90deg, var(--main-accent), var(--second-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        section { padding: 6rem 10%; }
+        .section-title { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; text-align: center; margin-bottom: 3rem; color: var(--main-accent); }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .project-card { background: var(--card-bg); border-radius: 15px; padding: 2rem; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s ease; }
+        .project-card:hover { border-color: var(--main-accent); transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1); }
+        .cta-btn { padding: 14px 35px; border-radius: 8px; text-decoration: none; font-family: 'Audiowide', cursive; text-transform: uppercase; background: linear-gradient(45deg, var(--main-accent), var(--second-accent)); color: #000; display: inline-block; transition: 0.3s; font-size: 0.9rem; border: none; }
+        footer { text-align: center; padding: 4rem; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">BISMARCH</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#exclusive-rewards">Rewards</a>
+            <a href="#blog">Blog</a>
+            <a href="#universe">Ecosystem</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>BISMARCH:<br><span>Futuristic Frontier</span></h1>
+        <p style="color: var(--text-secondary); margin-bottom: 30px;">Neutron Netam | Content & AI Visionary</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <a href="#exclusive-rewards" class="cta-btn">View Rewards</a>
+            <a href="#universe" class="cta-btn" style="background: transparent; border: 1px solid var(--main-accent); color: var(--main-accent);">Our Network</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; color: var(--text-secondary);">
+            <p>I am Neutron, building Bismarch to explore the intersection of AI, Space-Tech, and Robotics. Dedicated to bringing futuristic solutions to the present.</p>
+        </div>
+    </section>
+
+    <section id="exclusive-rewards" style="background: rgba(0, 242, 254, 0.02);">
+        <h2 class="section-title">Exclusive Rewards</h2>
+        <div style="text-align: center; border: 2px solid var(--main-accent); padding: 3rem; border-radius: 25px; background: #0a0a15; max-width: 700px; margin: 0 auto;">
+            <div style="font-size: 3rem; margin-bottom: 20px;"> 🇺🇸 🇬🇧</div>
+            <h3 style="margin-bottom: 10px;">USA EXCLUSIVE REWARDS</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 25px;">Sign up and earn instantly on your first survey. Valid for USA/UK/CA iOS users.</p>
+            <a href="https://singingfiles.com/show.php?l=0&u=2518601&id=73210" target="_blank" class="cta-btn">CLAIM NOW</a>
+        </div>
+    </section>
+
+    <section id="universe">
         <h2 class="section-title">Official Ecosystem</h2>
         <div class="project-grid">
-            
             <div class="project-card">
                 <div style="font-size: 2rem; margin-bottom: 15px;">🎬</div>
                 <h3>YouTube</h3>
                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Official Bismarch branding & AI insights.</p>
                 <a href="https://youtube.com/@bismarch_in" target="_blank" style="color: var(--main-accent); text-decoration: none; font-weight: bold;">SUBSCRIBE →</a>
             </div>
-
             <div class="project-card" style="border-color: rgba(185, 43, 39, 0.3);">
                 <div style="font-size: 2rem; margin-bottom: 15px;">Q</div>
                 <h3>Quora Space</h3>
                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Join the discussion on futuristic tech.</p>
                 <a href="https://bismarchin.quora.com/" target="_blank" style="color: #b92b27; text-decoration: none; font-weight: bold;">JOIN SPACE →</a>
             </div>
-
             <div class="project-card" style="border-color: rgba(255, 255, 255, 0.3);">
                 <div style="font-size: 2rem; margin-bottom: 15px;">M</div>
                 <h3>Medium Blog</h3>
                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Deep dives into Space & AI tech.</p>
                 <a href="https://medium.com/@bismarch" target="_blank" style="color: #fff; text-decoration: none; font-weight: bold;">FOLLOW BLOG →</a>
             </div>
-
             <div class="project-card">
                 <div style="font-size: 2rem; margin-bottom: 15px;">🤝</div>
                 <h3>Indian Syndicate</h3>
                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Network for Indian startups & innovators.</p>
                 <span style="color: #555; font-size: 0.7rem; font-weight: bold;">PRIVATE ACCESS</span>
             </div>
-
         </div>
     </section>
+
+    <footer>
+        &copy; 2026 BISMARCH | Built for the Frontier.
+    </footer>
+</body>
+</html>
